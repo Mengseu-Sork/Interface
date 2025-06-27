@@ -71,7 +71,7 @@ const cancelForm = () => {
   <div class="bg-white">
     <section
       class="bg-cover bg-center"
-      style="background-image: url('https://i.pinimg.com/736x/7a/aa/a5/7aaaa545e00e8a434850e80b8910dd94.jpg');"
+      style="background-image: url('https://i.pinimg.com/736x/ce/e7/9d/cee79dcd1ae644dd4b4a0054e851ec4e.jpg');"
     >
       <div
         class="bg-gray-300 bg-opacity-60 py-32 px-2 max-w-8xl mx-auto text-center"

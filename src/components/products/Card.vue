@@ -10,7 +10,7 @@ const emit = defineEmits(['buy'])
 
 <template>
   <div
-    class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center w-[280px] h-[390px] pb-6"
+    class="bg-white rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 ease-in-out overflow-hidden flex flex-col items-center w-[280px] h-[390px] pb-6"
   >
     <div class="w-full h-40 flex items-center justify-center p-4">
       <img

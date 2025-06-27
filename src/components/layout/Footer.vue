@@ -25,8 +25,8 @@
         <div class="flex-1 min-w-[250px]">
           <h2 class="text-xl font-semibold mb-2">Contact</h2>
           <ul class="text-sm space-y-2">
-            <li><span class="font-medium">Email:</span> support@fruitshop.com</li>
-            <li><span class="font-medium">Phone:</span> +855 123 456 789</li>
+            <li><span class="font-medium">Email:</span> mengseu.sork212004@gmail.com</li>
+            <li><span class="font-medium">Phone:</span> +855 86 788 826</li>
             <li><span class="font-medium">Location:</span> Phnom Penh, Cambodia</li>
           </ul>
         </div>
