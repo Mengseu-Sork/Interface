@@ -1,5 +1,4 @@
 <script setup>
-
 const steps = [
   {
     title: 'Choose Fruits',
@@ -17,64 +16,86 @@ const steps = [
     description: 'We deliver fresh fruits quickly and safely to your doorstep — just place your order and we’ll handle the rest!',
   },
 ];
+const h1 = "Welcome to Fruit Shop"
+const p1 = "Fresh. Organic. Delivered to your door."
+const h2 = "Why Choose Our Fruits?"
+const p2 = "Our fruits are handpicked from the best farms and delivered fresh to your door. We prioritize organic and sustainable farming to ensure you get the healthiest produce."
+const p3 = "No pesticides or chemicals used. Just clean, natural fruit the way nature intended."
+const p4 = "We source locally from trusted farms to ensure freshness and support local communities."
+const p5 = "Order today and get it delivered tomorrow – safe, fast, and convenient service every time."
+
 </script>
 
 <template>
   <div class="bg-white">
-    <section
-      class="bg-cover bg-center"
-      style="background-image: url('https://images.unsplash.com/photo-1567306226416-28f0efdc88ce');"
-    >
-      <div class="bg-gray-300 bg-opacity-60 py-32 px-2 max-w-8xl mx-auto text-center">
-        <h1 class="text-4xl font-bold text-white mb-4">Welcome to Fruit Shop</h1>
-        <p class="text-lg text-white mb-6">Fresh. Organic. Delivered to your door.</p>
-        <router-link
-          to="/product"
-          class="bg-green-400 hover:bg-green-500 text-white font-semibold py-2 px-6 rounded-full transition"
-        >
-          Shop Now
-        </router-link>
-      </div>
-    </section>
+    <main class="max-w-screen-xl mx-auto">
 
-    <section class="py-8 px-6 bg-white">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Our Fruits?</h2>
-        <p class="text-gray-600 mb-10 max-w-3xl mx-auto">
-          Our fruits are handpicked from the best farms and delivered fresh to your door.
-          We prioritize organic and sustainable farming to ensure you get the healthiest produce.
-        </p>
+      <!-- Hero Section -->
+      <header
+        class="bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1567306226416-28f0efdc88ce');"
+      >
+        <div class="bg-gray-300 bg-opacity-60 py-24 px-4 sm:px-6 md:px-10 text-center">
+          <h1 class="text-3xl sm:text-4xl font-bold text-white drop-shadow-md mb-4">
+            {{ h1 }}
+          </h1>
+          <p class="text-base sm:text-lg text-white drop-shadow-sm mb-6">
+            {{ p1 }}
+          </p>
+          <router-link
+            to="/product"
+            class="bg-green-400 hover:bg-green-500 text-white font-semibold py-2 px-6 rounded-full transition"
+          >
+            Shop Now
+          </router-link>
+        </div>
+      </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-          <div class="p-6 rounded-lg border hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold text-green-600 mb-2">100% Organic</h3>
-            <p class="text-gray-600">No pesticides or chemicals used. Just clean, natural fruit the way nature intended.</p>
-          </div>
-          <div class="p-6 rounded-lg border hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold text-green-600 mb-2">Fresh & Local</h3>
-            <p class="text-gray-600">We source locally from trusted farms to ensure freshness and support local communities.</p>
-          </div>
-          <div class="p-6 rounded-lg border hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold text-green-600 mb-2">Fast Delivery</h3>
-            <p class="text-gray-600">Order today and get it delivered tomorrow – safe, fast, and convenient service every time.</p>
+      <!-- Features Section -->
+      <section class="py-12 px-4 sm:px-6 md:px-8 lg:px-10">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">{{ h2 }}</h2>
+          <p class="text-gray-600 mb-10 max-w-3xl mx-auto">
+            {{ p2 }}
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
+            <div class="p-6 rounded-lg border hover:shadow-lg transition">
+              <h3 class="text-xl font-semibold text-green-600 mb-2">100% Organic</h3>
+              <p class="text-gray-600">{{ p3 }}</p>
+            </div>
+            <div class="p-6 rounded-lg border hover:shadow-lg transition">
+              <h3 class="text-xl font-semibold text-green-600 mb-2">Fresh & Local</h3>
+              <p class="text-gray-600">{{ p4 }}</p>
+            </div>
+            <div class="p-6 rounded-lg border hover:shadow-lg transition">
+              <h3 class="text-xl font-semibold text-green-600 mb-2">Fast Delivery</h3>
+              <p class="text-gray-600">{{ p5 }}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="bg-cover bg-center py-12 px-6">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Our Locations</h2>
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div
-          v-for="step in steps"
-          :key="step.title"
-          class="bg-white rounded-3xl p-8 text-center border hover:shadow-lg duration-300"
-        >
-          <img :src="step.icon" alt="icon" class="h-32 w-32 mx-auto mb-4" />
-          <h3 class="text-xl font-bold mb-2">{{ step.title }}</h3>
-          <p class="text-gray-600 text-sm">{{ step.description }}</p>
+      <!-- Steps / Locations Section -->
+      <section class="py-12 px-4 sm:px-6 md:px-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">Our Locations</h2>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div
+            v-for="step in steps"
+            :key="step.title"
+            class="bg-white rounded-3xl p-6 sm:p-8 text-center border hover:shadow-lg duration-300"
+          >
+            <img
+              :src="step.icon"
+              alt="icon"
+              class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover rounded-full mx-auto mb-4 hover:scale-105 transition-transform duration-300"
+            />
+            <h3 class="text-lg sm:text-xl font-bold mb-2">{{ step.title }}</h3>
+            <p class="text-gray-600 text-sm">{{ step.description }}</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+    </main>
   </div>
 </template>

@@ -70,7 +70,7 @@ const cancelForm = () => {
 <template>
   <div class="bg-white">
     <section
-      class="bg-cover bg-center"
+      class="bg-cover bg-center h-[325px]"
       style="background-image: url('https://i.pinimg.com/736x/ce/e7/9d/cee79dcd1ae644dd4b4a0054e851ec4e.jpg');"
     >
       <div

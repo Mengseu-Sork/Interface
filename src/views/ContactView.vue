@@ -1,32 +1,48 @@
 <script setup>
-
+const h2 = "Contact Us"
+const h3 = "Get In Touch"
+const p1 = "We’d love to hear from you! Reach out with questions, feedback, or just to say hello."
+const p2 = "Have questions about our fruits, delivery, or business partnerships? Contact us any time!"
+const contactInfo = [
+  { label: 'Phone', icon: '📞', value: '+855 86 788 826' },
+  { label: 'Email', icon: '📧', value: 'mengseu.sork212004@gmail.com' },
+  { 
+    label: 'Address', 
+    icon: '', 
+    value: '(Borey Sorla) Sangtak, Street 371, Phnom Penh', 
+    imageUrl: 'https://cdn4.iconfinder.com/data/icons/travel-and-holiday-3/32/location-512.png',
+    isAddress: true
+  }
+]
 </script>
 <template>
     <section class="bg-white py-12 px-6 md:px-20">
   <div class="max-w-6xl mx-auto">
-    <!-- Header -->
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-green-700">Contact Us</h2>
-      <p class="text-gray-600 mt-2">We’d love to hear from you! Reach out with questions, feedback, or just to say hello.</p>
+      <h2 class="text-4xl font-bold text-green-700">{{ h2 }}</h2>
+      <p class="text-gray-600 mt-2">{{ p1 }}</p>
     </div>
 
-    <!-- Contact Info + Form -->
     <div class="grid md:grid-cols-2 gap-10">
-      
-      <!-- Contact Info -->
       <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-4">Get In Touch</h3>
-        <p class="text-gray-700 mb-4">Have questions about our fruits, delivery, or business partnerships? Contact us any time!</p>
+        <h3 class="text-2xl font-semibold text-green-600 mb-4">{{ h3 }}</h3>
+        <p class="text-gray-700 mb-4">{{ p2 }}</p>
         <ul class="space-y-3 text-gray-700">
-            <li><strong>📞 Phone:</strong> +855 86 788 826</li>
-            <li><strong>📧 Email:</strong> mengseu.sork212004@gmail.com</li>
-            <li class="flex items-center text-gray-700">
-                <img src="https://cdn4.iconfinder.com/data/icons/travel-and-holiday-3/32/location-512.png" alt="Location Icon" class="h-6 w-6 mr-1" />
-                <strong class="mr-1">Address:</strong>(Borey Sorla) Sangtak, Street 371, Phnom Penh 
-            </li>
+          <li v-for="(item, index) in contactInfo" :key="index" :class="item.isAddress ? 'flex items-center' : ''">
+            <template v-if="item.isAddress">
+              <img
+                :src="item.imageUrl"
+                alt="Location Icon"
+                class="h-6 w-6 mr-1"
+              />
+              <strong class="mr-1">{{ item.label }}:</strong>{{ item.value }}
+            </template>
+            <template v-else>
+              <strong>{{ item.icon }} {{ item.label }}:</strong> {{ item.value }}
+            </template>
+          </li>
         </ul>
 
-        <!-- Optional Map -->
         <div class="flex-1 mt-6">
             <iframe
                 class="w-full h-[215px] rounded-lg shadow-lg"
@@ -39,7 +55,6 @@
 
       </div>
 
-      <!-- Contact Form -->
       <form class="bg-green-50 p-6 rounded-xl shadow-md space-y-5">
         <div>
           <label class="block mb-1 text-sm font-medium text-green-800">Your Name</label>
